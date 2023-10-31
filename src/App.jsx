@@ -70,8 +70,6 @@ const App = () => {
     }
   });
 
-  console.log(mostVotesIndex);
-
   return (
     <div>
       <h1>Anectode of the day</h1>
