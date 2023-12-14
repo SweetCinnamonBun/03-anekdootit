@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css";
 
 const Button = (props) => (
   <button onClick={props.handleClick}>{props.text}</button>
@@ -10,7 +11,7 @@ const MostVotedAnecdote = (props) => {
   if (props.votes > 0) {
     return (
       <div>
-        <p>{props.anecdotes[props.value]}</p>
+        <p className="most-voted">{props.anecdotes[props.value]}</p>
         <p>has {props.mostVotes} votes</p>
       </div>
     );
@@ -72,12 +73,12 @@ const App = () => {
 
   return (
     <div>
-      <h1>Anectode of the day</h1>
-      {anecdotes[selected]}
+      <h1 className="top-h1">Anectode of the day</h1>
+      <p className="anecdote">{anecdotes[selected]}</p>
       <Votes votes={points} selected={selected} />
       <Button handleClick={handleClickVote} text="vote" />
       <Button handleClick={randomAnecdote} text="next anecdote" />
-      <h1>Anecdote with the most votes</h1>
+      <h1 className="middle-h1">Anecdote with the most votes</h1>
       <MostVotedAnecdote
         anecdotes={anecdotes}
         value={mostVotesIndex}
